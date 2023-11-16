@@ -1,7 +1,14 @@
 export default function Card(props) {
    return (
-      <div>
-         <button onClick={props.onClose}>X</button>
+      <div
+         style={{
+            backgroundColor: "grey",
+            margin: "20px",
+            padding: "20px",
+            borderRadius: "15px",
+         }}
+      >
+         <button onClick={()=>props.onClose(props.id)}>X</button>
          <h2>{props.name}</h2>
          <h4>Id: {props.id}</h4>
          <h4>Status: {props.status}</h4>

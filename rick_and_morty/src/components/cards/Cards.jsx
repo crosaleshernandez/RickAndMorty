@@ -1,8 +1,13 @@
-import Card from './Card';
+import Card from '../card/Card';
 
-export default function Cards({characters}) {
-   return <div>
-
+export default function Cards({characters, onClose}) {
+   return <div
+   style={{
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "space-evenly"
+   }}
+>
          {
             characters.map(character => (
                <Card
@@ -14,7 +19,7 @@ export default function Cards({characters}) {
                   gender={character.gender}
                   origin={character.origin.name}
                   image={character.image}
-                  onClose={() => window.alert('Emulamos que se cierra la card')}
+                  onClose={onClose}
                />
             ))
          }     
